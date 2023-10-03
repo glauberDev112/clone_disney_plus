@@ -1,0 +1,41 @@
+@import "./modules/widgets/_hero.less";
+@import "./modules/settings/varset.less";
+
+.text(@fontsz: 16px,@color: @cor_texto_principal) {
+    font-size: @fontsz;
+    line-height: @fontsz + 10px;
+    color: @color;
+}
+* {
+    font-family: @font_principal;
+}
+.title (@fontsz: 28px) {
+    .text(@fontsz,@cor_texto_secundario)
+}
+.text {
+    &--big {
+        .text(18px)
+    }
+    & {
+        .text(15px)
+    }
+    &--small {
+        .text(12px)
+    }
+}
+.title {
+    &--big {
+        .title(44px)
+    }
+    &--small {
+        .title(28px)
+    }
+}
+.link-text {
+    &:hover {
+        text-decoration: underline;
+        cursor: pointer;
+    }
+    text-decoration: none; 
+    .text(18px,@cor_texto_secundario)
+}
