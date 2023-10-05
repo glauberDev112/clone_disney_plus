@@ -8,7 +8,7 @@
 </head>
 <body>
     <section class="hero">
-        <div class="div__content">
+        <div class="hero__content">
             <header>
                 <h1 class="hero__content__branding">
                     <img src="./images/disneyplus.svg" alt="disneyplus">
@@ -23,12 +23,12 @@
                 <ul class="hero__content__combos">
                     <li class="hero__content__combos__combo">
                         <img src="./images/logos/disney_star_plus.png" alt="Disneyplus - starplus - comboplus">
-                        <button>Assinar agora</button>
+                        <button class="button">Assinar agora</button>
                         <span class="text">R$ 45,9/mês</span>
                     </li>
                     <li class="hero__content__combos__combo">
                         <img src="./images/logos/disney_star_plus.png" alt="Disneyplus - starplus - comboplus">
-                        <button>Assinar agora</button>
+                        <button class="button">Assinar agora</button>
                         <span class="text">R$ 45,9/mês</span>
                     </li>
                 </ul>
@@ -36,5 +36,102 @@
             </header>
         </div>
     </section>
+    <section class="shows">
+        <nav class="shows__tabs">
+            <button class="shows__tabs__button" data-tab-id="Em_breve" data-active='true'>Em breve</button>
+            <button class="shows__tabs__button" data-tab-id="Mais_populares" data-active='false'>Mais populares</button>
+            <button class="shows__tabs__button" data-tab-id="Mais_Star+" data-active='false'>Mais no Star+</button>
+        </nav>
+        <ul class="shows__list--default" data-tab-id="Em_breve">
+            <li class="shows__list__item"><img src="./images/em_breve/spidey.jpg" alt="spidey"></li>
+            <li class="shows__list__item"><img src="./images/em_breve/spidey.jpg" alt="spidey"></li>
+            <li class="shows__list__item"><img src="./images/em_breve/spidey.jpg" alt="spidey"></li>
+            <li class="shows__list__item"><img src="./images/em_breve/spidey.jpg" alt="spidey"></li>
+            <li class="shows__list__item"><img src="./images/em_breve/spidey.jpg" alt="spidey"></li>
+            <li class="shows__list__item"><img src="./images/em_breve/spidey.jpg" alt="spidey"></li>
+        </ul>
+        <ul class="shows__list" data-tab-id="Mais_populares">
+            <li class="shows__list__item"><img src="./images/mais_populares/cavaleira_da_lua.jpg" alt="spidey"></li>
+            <li class="shows__list__item"><img src="./images/mais_populares/bluey.jpg" alt="spidey"></li>
+            <li class="shows__list__item"><img src="./images/mais_populares/red.jpg" alt="spidey"></li>
+            <li class="shows__list__item"><img src="./images/mais_populares/tudo_igual_sqn.jpg" alt="spidey"></li>
+            <li class="shows__list__item"><img src="./images/mais_populares/o_incrivel_dr_pol.jpg" alt="spidey"></li>
+            <li class="shows__list__item"><img src="./images/mais_populares/obi_wan.jpg" alt="spidey"></li>
+        </ul>
+        <ul class="shows__list" data-tab-id="Mais_Star+">
+            <li class="shows__list__item"><img src="./images/mais_no_star_plus/nba.jpg" alt="spidey"></li>
+            <li class="shows__list__item"><img src="./images/mais_no_star_plus/nba.jpg" alt="spidey"></li>
+            <li class="shows__list__item"><img src="./images/mais_no_star_plus/nba.jpg" alt="spidey"></li>
+            <li class="shows__list__item"><img src="./images/mais_no_star_plus/nba.jpg" alt="spidey"></li>
+            <li class="shows__list__item"><img src="./images/mais_no_star_plus/nba.jpg" alt="spidey"></li>
+            <li class="shows__list__item"><img src="./images/mais_no_star_plus/nba.jpg" alt="spidey"></li>
+        </ul>
+    </section>
+    <section class="plans">
+        <header>
+            <h2 class="title--big">Escolha seu plano</h2>
+        </header>
+        <main>
+            <ul class="plans__list">
+                <li class="plans__list__item">
+                    <header>
+                        <img src="./images/logos/disneyplus_underline.png" alt="">
+                    </header>
+                    <main>
+                        <strong class="title--small">R$ 27,9/mês*</strong>
+                        <p class="text--big">
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                        </p>
+                        <button class="button">
+                            Assine agora
+                        </button>
+                    </main>
+                </li>
+                <li class="plans__list__item">
+                    <header>
+                        <img src="./images/logos/disney_star_plus_sm.png" alt="">
+                    </header>
+                    <main>
+                        <strong class="title--small">R$ 27,9/mês*</strong>
+                        <p class="text--big">
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                        </p>
+                        <button class="button">
+                            Assine agora
+                        </button>
+                    </main>
+                </li>
+                <li class="plans__list__item">
+                    <header>
+                        <img src="./images/logos/disney_star_plus_starzplay_underline.png" alt="">
+                    </header>
+                    <main>
+                        <strong class="title--small">R$ 27,9/mês*</strong>
+                        <p class="text--big">
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                        </p>
+                        <button class="button">
+                            Assine agora
+                        </button>
+                    </main>
+                    
+                </li>
+            </ul>
+        </main>
+        <footer>
+            <p class="text--small">o preço pode variar entre serviços</p>
+        </footer>
+    </section>
 </body>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script>
+    $(document).ready(() => {
+        $('button[data-tab-id]').click(function (e) {
+            $('ul[data-tab-id]').each(function () {$(this).css('display','none')})
+            $('button[data-active]').each(function () {$(this).attr('data-active','false')})
+            $(`ul[data-tab-id="${$(this).attr('data-tab-id')}`).css('display','grid')
+            $(`button[data-tab-id="${$(this).attr('data-tab-id')}`).attr('data-active','true')
+        })
+    })
+</script>
 </html>

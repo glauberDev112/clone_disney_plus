@@ -1,0 +1,67 @@
+@font-face {
+  font-family: avemir;
+  src: url('../../../../assets/fonts/fonts/Avenir-Regular.woff2');
+  font-weight: 300;
+}
+@font-face {
+  font-family: avemir;
+  src: url('../../../../assets/fonts/fonts/Avenir-Regular.woff2');
+  font-weight: 700;
+}
+.shows {
+  padding: 2vw 5.6vw;
+  font-family: avenir, sans-serif;
+}
+.shows__list,
+.shows__list--default {
+  margin-top: 40px;
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 24px;
+}
+* > .shows__list,
+* > .shows__list--default {
+  display: none;
+}
+.shows__list--default,
+.shows__list--default--default {
+  display: grid;
+}
+.shows__list__item,
+.shows__list--default__item {
+  padding: 3px;
+}
+.shows__list__item img,
+.shows__list--default__item img {
+  border-radius: 4px;
+  max-width: 100%;
+}
+.shows__tabs {
+  display: flex;
+  justify-content: center;
+}
+.shows__tabs__button {
+  opacity: 50%;
+  scale: 80%;
+  cursor: pointer;
+  text-transform: uppercase;
+  margin-left: 10px;
+  color: #f9f9f9;
+  font-size: 20px;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2.5px solid #f9f9f9;
+}
+.shows__tabs__button:not(:hover) {
+  opacity: 50%;
+  scale: 80%;
+  transition: opacity 0.1s, scale 0.1s;
+  transition-delay: 0.09s;
+}
+.shows__tabs__button:hover,
+.shows__tabs__button[data-active="true"] {
+  opacity: 100%;
+  scale: 100%;
+  transition: opacity 0.1s, scale 0.5s;
+}

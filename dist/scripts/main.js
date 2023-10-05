@@ -1,0 +1,1 @@
+document.addEventListener("DOMContentLoaded",()=>{document.querySelectorAll("button[data-tab-id]").forEach(t=>{t.addEventListener("click",t=>{var t=t.target,e=t.getAttribute("data-tab-id");console.log("button",t,e)})})});

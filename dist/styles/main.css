@@ -8,6 +8,9 @@
 .hero__content {
   max-height: 640px;
 }
+.hero__content > header {
+  width: 500px;
+}
 .hero__content__branding {
   max-width: 320px;
   margin: 0 auto 38px;
@@ -23,8 +26,10 @@
 }
 .hero__content__combos {
   display: flex;
+  justify-content: center;
 }
 .hero__content__combos__combo {
+  max-width: 400px;
   width: calc(50% - 12px);
   margin: 10px;
   width: 50%;
@@ -33,30 +38,122 @@
 .hero__content__combos__combo img {
   width: 80%;
 }
-.hero__content__combos__combo button {
-  display: block;
-  width: 100%;
-  height: 60px;
-  font-size: 18px;
-  color: #f9f9f9;
-  background-color: #6421ff;
-  text-transform: uppercase;
-  border-radius: 4px;
-  margin-top: 2vw;
-  margin-bottom: 8px;
-}
 @font-face {
   font-family: avemir;
   src: url('../../../../assets/fonts/fonts/Avenir-Regular.woff2');
-  font-weight: 400;
+  font-weight: 300;
 }
 @font-face {
   font-family: avemir;
   src: url('../../../../assets/fonts/fonts/Avenir-Regular.woff2');
   font-weight: 700;
 }
+.shows {
+  padding: 2vw 5.6vw;
+  font-family: avenir, sans-serif;
+}
+.shows__list,
+.shows__list--default {
+  margin-top: 40px;
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 24px;
+}
+* > .shows__list,
+* > .shows__list--default {
+  display: none;
+}
+.shows__list--default,
+.shows__list--default--default {
+  display: grid;
+}
+.shows__list__item,
+.shows__list--default__item {
+  padding: 3px;
+}
+.shows__list__item img,
+.shows__list--default__item img {
+  border-radius: 4px;
+  max-width: 100%;
+}
+.shows__tabs {
+  display: flex;
+  justify-content: center;
+}
+.shows__tabs__button {
+  opacity: 50%;
+  scale: 80%;
+  cursor: pointer;
+  text-transform: uppercase;
+  margin-left: 10px;
+  color: #f9f9f9;
+  font-size: 20px;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2.5px solid #f9f9f9;
+}
+.shows__tabs__button:not(:hover) {
+  opacity: 50%;
+  scale: 80%;
+  transition: opacity 0.1s, scale 0.1s;
+  transition-delay: 0.09s;
+}
+.shows__tabs__button:hover,
+.shows__tabs__button[data-active="true"] {
+  opacity: 100%;
+  scale: 100%;
+  transition: opacity 0.1s, scale 0.5s;
+}
+.plans {
+  padding: 5.6vw;
+}
+.plans footer {
+  padding-left: 10px;
+}
+.plans h2 {
+  text-align: center;
+}
+.plans > * {
+  display: flex;
+  justify-content: center;
+}
+.plans__list {
+  display: flex;
+  justify-content: space-around;
+  max-width: 28.57142857%;
+  min-width: 41.06410256%;
+  width: 100%;
+}
+.plans__list__item {
+  text-align: center;
+  padding: 10px;
+  max-width: 310px;
+  width: 100%;
+}
+.plans__list__item:nth-child(2) {
+  display: flex;
+  flex-wrap: wrap;
+  background-image: url('../images/fundo_combo_plus.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.plans__list__item button {
+  width: 80%;
+  margin: 0 auto;
+}
+.plans__list__item img {
+  max-height: 83px;
+}
+.plans__list__item strong {
+  display: block;
+  margin-top: 24px;
+}
 * {
   font-family: avenir, sans-serif;
+}
+body {
+  background-color: black;
 }
 .text {
   font-size: 15px;
@@ -92,4 +189,21 @@
 .link-text:hover {
   text-decoration: underline;
   cursor: pointer;
+}
+header * {
+  text-align: center;
+}
+.button {
+  display: block;
+  cursor: pointer;
+  width: 100%;
+  height: 60px;
+  font-size: 18px;
+  color: #f9f9f9;
+  background-color: #6421ff;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 4px;
+  margin-top: 2vw;
+  margin-bottom: 8px;
 }

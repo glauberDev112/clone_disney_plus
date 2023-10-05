@@ -1,0 +1,64 @@
+@import "../settings/varset.less";
+.shows {
+    & {
+        padding: 2vw 5.6vw;
+        font-family: @font_principal;
+        
+    }
+    &__list {
+        &, &--default {
+            & {
+                margin-top: 40px;
+                list-style: none;
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                gap: 24px;
+            }
+            * > & {
+                display: none;
+            }
+            &--default {
+                display: grid;
+            } 
+            &__item {
+                padding: 3px;
+                img {
+                    border-radius: 4px;
+                    max-width: 100%;
+                }
+                
+            }
+        }
+    }
+    &__tabs {
+        display: flex;
+        justify-content: center;
+        &__button {
+            & {
+                opacity: 50%;
+                scale: 80%;
+                &:not(:hover) {
+                    opacity: 50%;
+                    scale: 80%;
+                    transition: opacity 0.1s, scale 0.1s;
+                    transition-delay: 0.09s;
+                }
+                
+                &:hover, &[data-active="true"] {
+                    opacity: 100%;
+                    scale: 100%;
+                    transition: opacity 0.1s, scale 0.5s;
+                }
+            }
+            
+            cursor:pointer;
+            text-transform: uppercase;
+            margin-left: 10px;
+            color: @cor_texto_secundario;
+            font-size: 20px;
+            background-color: transparent;
+            border: none;
+            border-bottom: 2.5px solid @cor_texto_secundario;
+        }
+    }
+}
